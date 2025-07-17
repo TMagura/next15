@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ErrorWrapper } from "./error-wrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +35,10 @@ export default function RootLayout({
     }}>
       <p> This is my hearder</p>
     </header>
-        {children}
+    <ErrorWrapper>
+     {children}
+    </ErrorWrapper>
+        
         <footer style={{backgroundColor:"green"}}>
   <p>Author: Hege Refsnes<br></br>
   <a href="mailto:hege@example.com">Teebag@example.com</a></p>
